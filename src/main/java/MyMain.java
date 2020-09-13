@@ -22,9 +22,9 @@ public class MyMain {
     // Calculates the factorial of a number
     public static double factorial(int x) {
         int last = 0;
+        if (x == 0)
+            return 1;
         for (int i = 0; i < x; i++) {
-            if (x == 0) 
-                return 1; 
             if (i == 0)
                 last = last + 1;
             else
@@ -39,7 +39,7 @@ public class MyMain {
     public static double calculateE() {
         int count = 0;
         double e = 0;
-        while (Math.abs(e - Math.E) >= .0001) {
+        while (Math.abs(e - Math.E) >= .001) {
             e = e + (1 / factorial(count));
             count++;
         }
@@ -52,7 +52,6 @@ public class MyMain {
         System.out.print("Enter a number: ");
         double input = scan.nextDouble();
         System.out.println("The square root of your number is approxamitely " + babylonian(input) + ".");
-        System.out.println("The aproxamite value of E is " + calculateE() + ".");
 
         scan.close();
     }
