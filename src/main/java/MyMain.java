@@ -7,11 +7,14 @@ public class MyMain {
         double guess = 3;
         double betterGuess = 0;
         double temporary = 0;
-        while (Math.abs(betterGuess - guess) < 0.0000001) {
+        boolean condition = false;
+        while (.00001 < (Math.abs(guess - betterGuess))) {
             betterGuess = (guess + (x / guess)) / 2;
             temporary = guess;
             guess = betterGuess;
             betterGuess = temporary;
+            
+            
         }
         return guess;
     }
@@ -36,7 +39,7 @@ public class MyMain {
     public static double calculateE() {
         int count = 0;
         double e = 0;
-        while (Math.abs(e - Math.E) <= 0.00000001) {
+        while (Math.abs(e - Math.E) >= .0001) {
             e = e + (1 / factorial(count));
             count++;
         }
@@ -49,8 +52,6 @@ public class MyMain {
         System.out.print("Enter a number: ");
         double input = scan.nextDouble();
         System.out.println("The square root of your number is approxamitely " + babylonian(input) + ".");
-        int input2 = scan.nextInt();
-        System.out.println(factorial(input2));
         System.out.println("The aproxamite value of E is " + calculateE() + ".");
 
         scan.close();
